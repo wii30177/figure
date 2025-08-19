@@ -1,21 +1,25 @@
 reset
-set terminal pngcairo size 1000,720 enhanced font "Times-Roman,26"
+set terminal pngcairo size 1000,750 enhanced font "Times-Roman,28"
 set output "multi_E1.png"
 
 # 外觀
 set border lw 2
-set tics out nomirror
-set grid ytics lc rgb "#cccccc"
+set size 1,1
+set bmargin 3
+set tmargin 3
 
 # 座標軸
-set ylabel "95% Latency (ms)" font ",20" offset 1.4
 set yrange [0:80]
-set ytics 0,5 font ",20"
-set xlabel "Clients (BW160, E1)" font ",20" offset 0,0.8
-set xtics ("2" 0, "4" 1, "6" 2) font ",20"
+set ylabel "95% Latency (ms)" font ",32" offset 1.0
+set ytics 0,10 font ",28"
+set grid ytics lc rgb "#cccccc"
+set xlabel "Clients (BW160, E1)" font ",32" offset 0,0.5
+set xtics ("2" 0, "4" 1, "6" 2) font ",28" offset 0, 0.2 scale 0
 
 # 圖例放上方、橫向排列
-set key outside center top horizontal samplen 2.0 spacing 0.4 font ",16"
+# set key outside center top horizontal samplen 2.0 spacing 0.4 font ",16"
+set key above font ",28"
+set x2tics ("" 0, "" 1, "" 2) 
 
 # 直方圖
 set style data histogram
@@ -38,7 +42,7 @@ plot \
 unset output
 
 # 輸出 EPS 版本
-set terminal postscript eps enhanced color "Times-Roman,26"
+set terminal postscript eps enhanced color "Times-Roman,28"
 set output "multi_E1.eps"
 replot
 unset output

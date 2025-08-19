@@ -36,7 +36,7 @@ plot "per_100ms.txt"  using 1:2 with linespoints ls 1 title "  HTT", \
 unset output
 
 # 輸出 EPS 版本
-set terminal postscript eps enhanced color "Times-Roman,26"
+set terminal postscript eps enhanced color "Times-Roman,28"
 set output "per_100ms_E11_BW80.eps"
 replot
 unset output

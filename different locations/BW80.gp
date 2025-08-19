@@ -3,7 +3,6 @@ set terminal pngcairo size 1000,750 enhanced font "Times-Roman,28"
 set output "BW80-95-percent.png"
 
 # 外觀
-# set tics out nomirror
 set border lw 2
 set size 1,1
 set bmargin 3
@@ -13,6 +12,7 @@ set tmargin 3
 set yrange [0:40]
 set ylabel "95% Latency (ms)" font ",32" offset 1.0
 set ytics 0,5 font ",28"
+set grid ytics lc rgb "#cccccc"
 set xlabel "Locations (BW80)" font ",32" offset 0,0.5
 set xtics scale 0
 set xtics ("E2" 0, "E4" 1, "E5" 2, "E8" 3, "E11" 4) font ",28" offset 0, 0.2
