@@ -1,30 +1,30 @@
 reset
-set terminal pngcairo size 1000,720 enhanced font "Times-Roman,26"
+set terminal pngcairo size 1000,750 enhanced font "Times-Roman,28"
 set output "BW80-95-percent.png"
 
 # 外觀
+# set tics out nomirror
 set border lw 2
-set tics out nomirror
-set grid ytics lc rgb "#cccccc"
+set size 1,1
+set bmargin 3
 
 # 座標軸
-set ylabel "95% Latency (ms)" font ",20" offset 1.4
 set yrange [0:40]
-set ytics 0,5 font ",20"
-set xlabel "Locations (BW80)" font ",20" offset 0,0.8
-set xtics ("E2" 0, "E4" 1, "E5" 2, "E7" 3, "E8" 4, "E11" 5) font ",20"
+set ylabel "95% Latency (ms)" font ",32" offset 0.4
+set ytics 0,5 font ",28" offset 0.3
+set xlabel "Locations (BW80)" font ",32" offset 0,0.3
+set xtics scale 0
+set xtics ("E2" 0, "E4" 1, "E5" 2, "E7" 3, "E8" 4, "E11" 5) font ",28" offset 0,0.3
+set x2tics ("" 0, "" 1, "" 2, "" 3, "" 4, "" 5) 
 
 # 圖例放上方、橫向排列
-set key outside center top horizontal samplen 2.0 spacing 0.4 font ",16"
+set key above horizontal samplen 2.3 spacing 0.1 font ",24"
+set tmargin 1.8
 
 # 直方圖
 set style data histogram
 set style histogram clustered gap 2
 set boxwidth 0.85
-
-# 虛線參考線
-# set style line 99 lc rgb "#aaaaaa" dt 2 lw 2
-# set arrow 1 from -1,6 to 6,6 nohead ls 99 front
 
 # 繪圖（同一資料檔連續使用三次）
 # BW160.txt 每列對應一個點（E1/E2/E3/E4/E5/E6）
@@ -38,7 +38,7 @@ plot \
 unset output
 
 # 輸出 EPS 版本
-set terminal postscript eps enhanced color "Times-Roman,26"
+set terminal postscript eps enhanced color "Times-Roman" 28
 set output "BW80-95-percent.eps"
 replot
 unset output

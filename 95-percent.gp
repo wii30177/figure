@@ -10,8 +10,8 @@ set terminal postscript eps enhanced color  "Times-Roman" 28
 set size 1,1
 set bmargin 3
 
-set xlabel "# Interference" font ",36" offset 0,0.5
-set xtics ("1" 0, "3" 1, "5" 2) font ",32" offset 0,0.3
+set xlabel "# Interference" font ",36" offset 0,0.3
+set xtics ("1" 0, "3" 1, "5" 2) font ",32"
 set ylabel "95% Latency (ms)" font ",36" offset 1.7
 set yrange[0:50]
 set ytics 0,5 font ",32" offset 0.4
