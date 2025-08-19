@@ -7,19 +7,20 @@ set output "BW80-95-percent.png"
 set border lw 2
 set size 1,1
 set bmargin 3
+set tmargin 3
 
 # 座標軸
 set yrange [0:40]
-set ylabel "95% Latency (ms)" font ",32" offset 0.4
-set ytics 0,5 font ",28" offset 0.3
-set xlabel "Locations (BW80)" font ",32" offset 0,0.3
+set ylabel "95% Latency (ms)" font ",32" offset 1.0
+set ytics 0,5 font ",28"
+set xlabel "Locations (BW80)" font ",32" offset 0,0.5
 set xtics scale 0
-set xtics ("E2" 0, "E4" 1, "E5" 2, "E7" 3, "E8" 4, "E11" 5) font ",28" offset 0,0.3
+set xtics ("E2" 0, "E4" 1, "E5" 2, "E8" 3, "E11" 4) font ",28" offset 0, 0.2
 set x2tics ("" 0, "" 1, "" 2, "" 3, "" 4, "" 5) 
 
 # 圖例放上方、橫向排列
-set key above horizontal samplen 2.3 spacing 0.1 font ",24"
-set tmargin 1.8
+# set key above horizontal samplen 2.0 spacing 1.0 font ",20"
+set key above font ",28"
 
 # 直方圖
 set style data histogram
